@@ -87,10 +87,6 @@ namespace View
         {
             DataContext = this;
         }
-        private void TextBox(object sender, TextCompositionEventArgs e)
-        {
-            Vd.Changed = true;
-        }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Vd.Clear();

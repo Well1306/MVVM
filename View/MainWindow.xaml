@@ -126,11 +126,11 @@
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
                 <TextBlock TextWrapping="Wrap" Text="Производная слева:" Width="270" Height="30" FontWeight="Bold" FontSize="16"/>
-                <TextBox PreviewTextInput="TextBox" TextWrapping="Wrap" Text="{Binding Vd.Data.Uniform_Deriative_l, UpdateSourceTrigger=PropertyChanged}"  BorderBrush="Black"  Width="138" Height="30" FontSize="20"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding Vd.Data.Uniform_Deriative_l, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DoubleStrConv}}"  BorderBrush="Black"  Width="138" Height="30" FontSize="20"/>
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
                 <TextBlock TextWrapping="Wrap" Text="Производная справа:" Width="270" Height="30" FontWeight="Bold" FontSize="16"/>
-                <TextBox  PreviewTextInput="TextBox" TextWrapping="Wrap" Text="{Binding Vd.Data.Uniform_Deriative_r, UpdateSourceTrigger=PropertyChanged}" BorderBrush="Black"  Width="138" Height="30" FontSize="20"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding Vd.Data.Uniform_Deriative_r, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DoubleStrConv}}" BorderBrush="Black"  Width="138" Height="30" FontSize="20"/>
             </StackPanel>
         </StackPanel>
         <lvc:CartesianChart LegendLocation="Right" Grid.Column="0" Margin="10,30,10,10" Grid.Row="0" Series="{Binding Vd.Chart.Sc}" Grid.ColumnSpan="2" Grid.RowSpan="2">

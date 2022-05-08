@@ -21,23 +21,6 @@ namespace View
             Data = new ViewModelData();
             Chart = new ChartData();
         }
-
-        public bool Changed
-        {
-            get { return Data.Changed; }
-            set { Data.Changed = value; }
-        }
-
-        public void MdSetGrid()
-        {
-            Data.MdSetGrid();
-            OnPropertyChanged(nameof(Data));
-        }
-        public double[] Splain(ref double a, ref double[] Int)
-        {
-            OnPropertyChanged(nameof(Data));
-            return Data.Splain(ref a, ref Int);
-        }
         public void Measured_on_Chart()
         {
             Data.Func = Data.SpfList.selectedFunc.func;
