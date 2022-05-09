@@ -33,13 +33,6 @@ namespace ModelTests
         [Fact]
         public void Test3()
         {
-            var md = new Model.MeasuredData(1, 0.001, 1, Model.Spf.Linear);
-            md.SetGrid();
-            Assert.True(md.Err);
-        }
-        [Fact]
-        public void Test4()
-        {
             var md = new Model.MeasuredData(3, 0.001, 1, Model.Spf.Cubic);
             var sp = new Model.SplineParameters();
             var sd = new Model.SplinesData(md, sp);

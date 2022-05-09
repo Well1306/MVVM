@@ -27,8 +27,6 @@ namespace Model
         public double[] Measured { get; set; }
         public double Int_Start { get; set; }
         public double Int_End { get; set; }
-        public bool Changed { get; set; }
-        public bool Err { get; set; }
         public bool Iszeros
         {
             get
@@ -46,18 +44,15 @@ namespace Model
             N = 10; Start = 0; End = 1; Func = Spf.Linear;
             Int_Start = 0; Int_End = 1;
             Grid = new double[N]; Measured = new double[N];
-            Changed = true; Err = false;
         }
         public MeasuredData(int n, double s, double e, Spf f)
         {
             N = n; Start = s; End = e; Func = f;
             Int_Start = 0; Int_End = 1;
             Grid = new double[N]; Measured = new double[N];
-            Changed = true; Err = false;
         }
         public void SetGrid()
         {
-            if (!Changed) return;
             Grid = new double[N];
             Measured = new double[N];
             int s_int = (int)Start;
@@ -78,12 +73,11 @@ namespace Model
                     for (int i = 0; i < N; i++) Measured[i] = Math.Pow(Grid[i], 3);
                     break;
             }
-            Changed = false; Err = (N <= 2) || (Start >= End);
         }
 
         public bool SetErr()
         {
-            return Err = (N <= 2) || (Start >= End) || !(Start <= Int_Start && Int_Start < Int_End && Int_End <= End);
+            return (N <= 2) || (Start >= End) || !(Start <= Int_Start && Int_Start < Int_End && Int_End <= End);
         }
         public ObservableCollection<string>? _str = new();
 
