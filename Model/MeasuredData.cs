@@ -31,7 +31,7 @@ namespace Model
         {
             get
             {
-                for (int i = 0; i < N; i++)
+                for (int i = 0; i < Grid.Length; i++)
                 {
                     if (!((Grid[i] == 0) && (Measured[i] == 0)))
                         return false;

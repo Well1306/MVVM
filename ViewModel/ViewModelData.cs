@@ -47,6 +47,10 @@ namespace ViewModel
             return Data.Md.SetErr() || Data.Sp.SetErr();
         }
 
+        public bool IsZeros()
+        {
+            return Data.Md.Iszeros;
+        }
         public ViewModelData()
         {
             Data = new SplinesData();
@@ -96,7 +100,7 @@ namespace ViewModel
                         OnPropertyChanged(nameof(Data));
                         OnPropertyChanged(nameof(Chart));
                     },
-                    (obj) => !SetErr()));
+                    (obj) => !SetErr() && !IsZeros()));
             }
         }
         private RelayCommand clearCommand;
